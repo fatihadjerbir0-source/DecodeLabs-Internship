@@ -1,37 +1,80 @@
- Dataset chargé : 1200 lignes, 14 colonnes
- Colonnes : ['OrderID', 'Date', 'CustomerID', 'Product', 'Quantity', 'UnitPrice', 'ShippingAddress', 'PaymentMethod', 'OrderStatus', 'TrackingNumber', 'ItemsInCart', 'CouponCode', 'ReferralSource', 'TotalPrice']
+# Project 1 - Data Cleaning
 
- Valeurs manquantes par colonne :
-    - CouponCode : 309 valeurs manquantes (25.8%)
-    -> CouponCode manquant interprété comme 'pas de coupon' : 309 valeurs remplacées par 'No Coupon'
+## 📌 Project Overview
 
-Vérification des doublons :
-    - Lignes 100% identiques supprimées : 0
-    - Doublons sur la clé OrderID supprimés : 0
+This project is part of my Data Analytics Internship at DecodeLabs.
 
- Vérification du format des dates :
-    - Dates non convertibles en date valide : 0
-    - Lignes supprimées car date invalide : 0
-    - Dates dans le futur détectées : 0
-    - Plage de dates finale : 2023-01-01 -> 2025-06-30
+The objective of this project was to clean and prepare a raw dataset before performing further analysis.
 
- Nettoyage des espaces dans les colonnes texte :
-    - Colonnes texte traitées : ['OrderID', 'CustomerID', 'Product', 'ShippingAddress', 'PaymentMethod', 'OrderStatus', 'TrackingNumber', 'CouponCode', 'ReferralSource']
-    - Valeurs modifiées (espaces superflus retirés) : 0
+Data cleaning is an important step in the data analysis process because the quality of the results depends on the quality of the data.
 
- Vérification des types numériques (Quantity, UnitPrice) :
-    - Quantity : 0 valeurs non numériques converties en NaN
-    - UnitPrice : 0 valeurs non numériques converties en NaN
-    - Lignes supprimées (Quantity/UnitPrice invalides) : 0
-    - Quantity <= 0 détectées : 0
-    - UnitPrice <= 0 détectées : 0
-    - Lignes restantes après filtrage : 1200
+---
 
- Vérification de TotalPrice = Quantity x UnitPrice :
-    - Incohérences détectées entre TotalPrice existant et le calcul : 0
-    - TotalPrice recalculé pour toutes les lignes (garantit la cohérence)
+## 📊 Dataset
 
-============================================================
-RÉSUMÉ : 1200 lignes au départ -> 1200 lignes après nettoyage
-Fichier sauvegardé : Cleaned_Dataset.xlsx
-============================================================
+The original dataset contains information about customer orders, including:
+
+- Order ID
+- Date
+- Customer ID
+- Product
+- Quantity
+- Unit Price
+- Shipping Address
+- Payment Method
+- Order Status
+- Tracking Number
+- Items in Cart
+- Coupon Code
+- Referral Source
+- Total Price
+
+### Dataset Size
+
+- **Number of rows:** 1,200
+- **Number of columns:** 14
+- **Period covered:** January 2023 to June 2025
+
+---
+
+## 🎯 Project Objective
+
+The main objective was to clean the raw dataset and create a reliable dataset that could be used for further analysis.
+
+The following data cleaning steps were performed:
+
+1. Checking missing values
+2. Detecting duplicate records
+3. Checking and standardizing dates
+4. Cleaning unnecessary spaces in text columns
+5. Checking numerical data
+6. Verifying the TotalPrice calculation
+7. Exporting the cleaned dataset
+
+---
+
+## 🛠️ Tools and Libraries Used
+
+- Python
+- Pandas
+- NumPy
+- OpenPyXL
+- Microsoft Excel
+
+---
+
+## 🔄 Data Cleaning Process
+
+### 1. Checking Missing Values
+
+The dataset was checked for missing values.
+
+The only missing values were found in the **CouponCode** column:
+
+- **309 missing values**
+- Approximately **25.8% of the dataset**
+
+These missing values were replaced with:
+
+```text
+No Coupon
