@@ -1,0 +1,661 @@
+[1] 1200 lignes chargees dans la table 'orders' -> ecommerce.db
+
+[2] 13 requetes trouvees dans queries.sql
+
+==============================================================================
+Q1. Toutes les commandes annulees, les plus recentes en premier
+------------------------------------------------------------------------------
+SELECT OrderID, Date, Product, TotalPrice, OrderStatus
+FROM orders
+WHERE OrderStatus = 'Cancelled'
+ORDER BY Date DESC
+------------------------------------------------------------------------------
+  OrderID                Date Product  TotalPrice OrderStatus
+ORD201107 2025-06-30 00:00:00  Tablet      126.42   Cancelled
+ORD200773 2025-06-28 00:00:00   Phone     1024.66   Cancelled
+ORD201039 2025-06-28 00:00:00    Desk      598.46   Cancelled
+ORD200064 2025-06-25 00:00:00 Printer      391.83   Cancelled
+ORD200055 2025-06-24 00:00:00 Printer     1033.20   Cancelled
+ORD200163 2025-06-24 00:00:00  Tablet      641.39   Cancelled
+ORD200676 2025-06-23 00:00:00  Laptop      844.68   Cancelled
+ORD200713 2025-06-21 00:00:00  Tablet     2129.96   Cancelled
+ORD200133 2025-06-20 00:00:00   Chair     1208.20   Cancelled
+ORD200965 2025-06-18 00:00:00  Laptop     2313.12   Cancelled
+ORD200504 2025-06-11 00:00:00 Monitor      929.00   Cancelled
+ORD200849 2025-06-09 00:00:00 Printer      857.40   Cancelled
+ORD200088 2025-06-05 00:00:00    Desk      344.43   Cancelled
+ORD200355 2025-06-03 00:00:00  Tablet     1299.99   Cancelled
+ORD200966 2025-05-20 00:00:00 Monitor     1402.60   Cancelled
+ORD200251 2025-05-15 00:00:00 Monitor       58.76   Cancelled
+ORD200843 2025-05-13 00:00:00    Desk     1290.18   Cancelled
+ORD200315 2025-05-12 00:00:00  Tablet      458.35   Cancelled
+ORD200243 2025-05-09 00:00:00   Chair      289.32   Cancelled
+ORD200111 2025-05-07 00:00:00    Desk      927.66   Cancelled
+ORD200147 2025-05-06 00:00:00  Laptop      930.36   Cancelled
+ORD200908 2025-05-06 00:00:00    Desk     1395.86   Cancelled
+ORD200370 2025-05-03 00:00:00   Phone      312.11   Cancelled
+ORD200850 2025-04-27 00:00:00 Monitor     1915.50   Cancelled
+ORD201013 2025-04-26 00:00:00  Laptop     1202.24   Cancelled
+ORD200282 2025-04-22 00:00:00 Printer     2551.16   Cancelled
+ORD200471 2025-04-19 00:00:00    Desk     2756.35   Cancelled
+ORD200475 2025-04-19 00:00:00  Tablet      877.24   Cancelled
+ORD200216 2025-04-15 00:00:00 Monitor     1984.00   Cancelled
+ORD200774 2025-04-15 00:00:00   Chair       61.62   Cancelled
+ORD200099 2025-04-12 00:00:00 Printer      201.58   Cancelled
+ORD200023 2025-04-09 00:00:00   Phone     1093.00   Cancelled
+ORD200564 2025-04-08 00:00:00    Desk     1821.40   Cancelled
+ORD200170 2025-04-04 00:00:00    Desk     2651.76   Cancelled
+ORD200677 2025-04-03 00:00:00  Tablet      110.35   Cancelled
+ORD200008 2025-04-02 00:00:00   Phone      268.56   Cancelled
+ORD200462 2025-03-31 00:00:00   Phone      252.68   Cancelled
+ORD200777 2025-03-21 00:00:00   Chair      322.45   Cancelled
+ORD200426 2025-03-16 00:00:00 Monitor      287.25   Cancelled
+ORD200813 2025-03-15 00:00:00  Laptop     1462.70   Cancelled
+ORD200496 2025-03-14 00:00:00 Printer      603.63   Cancelled
+ORD200191 2025-03-08 00:00:00  Laptop      977.74   Cancelled
+ORD201077 2025-03-07 00:00:00 Printer      915.48   Cancelled
+ORD200344 2025-03-06 00:00:00  Tablet     1870.02   Cancelled
+ORD201139 2025-03-01 00:00:00   Chair     1505.46   Cancelled
+ORD200661 2025-02-28 00:00:00  Tablet     1274.67   Cancelled
+ORD200089 2025-02-25 00:00:00 Printer     2276.65   Cancelled
+ORD200549 2025-02-25 00:00:00 Monitor     2519.52   Cancelled
+ORD200746 2025-02-24 00:00:00    Desk     1985.67   Cancelled
+ORD200760 2025-02-18 00:00:00    Desk       39.56   Cancelled
+ORD201141 2025-02-16 00:00:00   Chair     1495.98   Cancelled
+ORD200365 2025-02-14 00:00:00   Phone      678.38   Cancelled
+ORD200202 2025-02-06 00:00:00 Monitor      761.94   Cancelled
+ORD200904 2025-02-05 00:00:00 Monitor      949.72   Cancelled
+ORD200988 2025-02-04 00:00:00    Desk     1259.12   Cancelled
+ORD200405 2025-01-26 00:00:00 Monitor     1807.88   Cancelled
+ORD200103 2025-01-25 00:00:00   Phone      873.72   Cancelled
+ORD200130 2025-01-22 00:00:00    Desk     1503.90   Cancelled
+ORD200391 2025-01-16 00:00:00  Laptop     1054.92   Cancelled
+ORD200152 2025-01-02 00:00:00   Chair      798.08   Cancelled
+ORD201169 2024-12-23 00:00:00   Chair      525.43   Cancelled
+ORD200148 2024-12-15 00:00:00   Phone      639.82   Cancelled
+ORD200067 2024-12-09 00:00:00 Printer       48.40   Cancelled
+ORD200488 2024-12-05 00:00:00   Chair       36.65   Cancelled
+ORD201132 2024-12-02 00:00:00   Chair      674.64   Cancelled
+ORD200454 2024-11-27 00:00:00  Laptop      109.29   Cancelled
+ORD200428 2024-11-26 00:00:00   Chair     1050.32   Cancelled
+ORD200597 2024-11-25 00:00:00    Desk      423.64   Cancelled
+ORD200066 2024-11-15 00:00:00   Chair      635.90   Cancelled
+ORD200606 2024-11-06 00:00:00  Laptop      824.25   Cancelled
+ORD200707 2024-11-01 00:00:00   Chair     2600.16   Cancelled
+ORD200273 2024-10-27 00:00:00  Tablet      476.50   Cancelled
+ORD200889 2024-10-27 00:00:00 Monitor     3253.60   Cancelled
+ORD200105 2024-10-24 00:00:00 Printer      556.20   Cancelled
+ORD200616 2024-10-17 00:00:00  Tablet     1804.80   Cancelled
+ORD200805 2024-10-15 00:00:00  Laptop     2360.05   Cancelled
+ORD200431 2024-10-06 00:00:00 Printer       52.54   Cancelled
+ORD200819 2024-09-28 00:00:00   Phone      796.90   Cancelled
+ORD200252 2024-09-20 00:00:00   Phone     2673.44   Cancelled
+ORD201099 2024-09-19 00:00:00  Laptop      250.46   Cancelled
+ORD201178 2024-09-08 00:00:00 Monitor       70.24   Cancelled
+ORD200666 2024-08-31 00:00:00 Monitor     1308.48   Cancelled
+ORD200467 2024-08-30 00:00:00    Desk       45.94   Cancelled
+ORD200643 2024-08-26 00:00:00  Laptop      438.37   Cancelled
+ORD200233 2024-08-24 00:00:00   Phone      933.99   Cancelled
+ORD201198 2024-08-22 00:00:00   Chair     1050.08   Cancelled
+ORD200527 2024-08-19 00:00:00   Chair     3267.35   Cancelled
+ORD201189 2024-08-17 00:00:00  Tablet     1946.10   Cancelled
+ORD200911 2024-08-13 00:00:00    Desk     1984.30   Cancelled
+ORD200815 2024-08-04 00:00:00 Printer     1709.52   Cancelled
+ORD200907 2024-08-04 00:00:00    Desk     1491.95   Cancelled
+ORD200318 2024-07-27 00:00:00   Chair      446.16   Cancelled
+ORD200866 2024-07-26 00:00:00    Desk      946.25   Cancelled
+ORD200535 2024-07-24 00:00:00 Monitor      204.36   Cancelled
+ORD200608 2024-07-24 00:00:00  Laptop     2715.80   Cancelled
+ORD200490 2024-07-22 00:00:00   Chair     2339.05   Cancelled
+ORD200423 2024-07-20 00:00:00 Printer     2740.80   Cancelled
+ORD200902 2024-07-13 00:00:00 Monitor      721.00   Cancelled
+ORD200846 2024-07-04 00:00:00    Desk      719.72   Cancelled
+ORD201140 2024-06-24 00:00:00 Printer     1105.66   Cancelled
+ORD200948 2024-06-21 00:00:00   Phone     1188.14   Cancelled
+ORD201195 2024-06-20 00:00:00    Desk      107.04   Cancelled
+ORD200086 2024-06-19 00:00:00 Printer     3215.15   Cancelled
+ORD200296 2024-06-19 00:00:00    Desk     3194.00   Cancelled
+ORD201034 2024-06-16 00:00:00 Printer     2071.92   Cancelled
+ORD200771 2024-06-12 00:00:00   Phone     2077.32   Cancelled
+ORD200198 2024-06-11 00:00:00  Laptop     1361.20   Cancelled
+ORD200266 2024-06-08 00:00:00   Chair     2332.28   Cancelled
+ORD201134 2024-06-08 00:00:00    Desk      153.12   Cancelled
+ORD200534 2024-06-06 00:00:00   Chair     1945.77   Cancelled
+ORD200484 2024-05-29 00:00:00   Chair       60.04   Cancelled
+ORD200971 2024-05-27 00:00:00 Monitor     1210.52   Cancelled
+ORD200991 2024-05-09 00:00:00    Desk      635.90   Cancelled
+ORD200042 2024-05-06 00:00:00 Printer      303.32   Cancelled
+ORD200642 2024-04-29 00:00:00   Chair      426.10   Cancelled
+ORD200136 2024-04-27 00:00:00  Laptop       44.35   Cancelled
+ORD200257 2024-04-23 00:00:00   Phone      406.22   Cancelled
+ORD200195 2024-04-22 00:00:00   Chair     1857.63   Cancelled
+ORD200522 2024-04-20 00:00:00   Chair      515.32   Cancelled
+ORD200566 2024-04-18 00:00:00   Phone      650.84   Cancelled
+ORD200559 2024-04-15 00:00:00    Desk      472.20   Cancelled
+ORD200663 2024-04-15 00:00:00 Monitor       72.60   Cancelled
+ORD200633 2024-04-10 00:00:00  Laptop     3008.60   Cancelled
+ORD200517 2024-04-09 00:00:00  Tablet      793.40   Cancelled
+ORD200358 2024-04-07 00:00:00  Tablet      367.34   Cancelled
+ORD200184 2024-04-04 00:00:00  Tablet      858.16   Cancelled
+ORD200076 2024-03-31 00:00:00  Laptop     1531.52   Cancelled
+ORD200780 2024-03-31 00:00:00  Laptop      737.92   Cancelled
+ORD200161 2024-03-29 00:00:00 Monitor      211.14   Cancelled
+ORD200764 2024-03-10 00:00:00  Laptop     3137.15   Cancelled
+ORD200614 2024-03-08 00:00:00   Phone       96.81   Cancelled
+ORD200688 2024-03-06 00:00:00 Monitor     2372.88   Cancelled
+ORD201196 2024-03-04 00:00:00 Monitor     1325.06   Cancelled
+ORD200002 2024-02-27 00:00:00  Tablet     2753.40   Cancelled
+ORD200465 2024-02-26 00:00:00 Printer     2567.45   Cancelled
+ORD200594 2024-02-21 00:00:00   Phone      363.20   Cancelled
+ORD200802 2024-02-17 00:00:00   Chair     3223.20   Cancelled
+ORD200617 2024-02-08 00:00:00  Tablet      553.41   Cancelled
+ORD200812 2024-01-26 00:00:00   Phone      510.52   Cancelled
+ORD200299 2024-01-20 00:00:00 Monitor      278.66   Cancelled
+ORD200937 2024-01-16 00:00:00   Chair      597.06   Cancelled
+ORD201105 2024-01-08 00:00:00  Tablet     1427.07   Cancelled
+ORD200931 2024-01-01 00:00:00 Printer       80.46   Cancelled
+ORD200657 2023-12-24 00:00:00  Tablet      351.16   Cancelled
+ORD200265 2023-12-22 00:00:00 Printer      572.13   Cancelled
+ORD201066 2023-12-20 00:00:00    Desk      355.09   Cancelled
+ORD200298 2023-12-19 00:00:00 Printer     1204.68   Cancelled
+ORD200043 2023-12-14 00:00:00   Chair     1497.63   Cancelled
+ORD200851 2023-12-12 00:00:00  Laptop      365.57   Cancelled
+ORD200121 2023-11-30 00:00:00    Desk      410.78   Cancelled
+ORD200469 2023-11-26 00:00:00   Chair     3384.90   Cancelled
+ORD200364 2023-11-24 00:00:00   Phone     3143.70   Cancelled
+ORD200141 2023-11-18 00:00:00 Printer     2052.42   Cancelled
+ORD200542 2023-11-14 00:00:00  Tablet       17.98   Cancelled
+ORD200699 2023-11-13 00:00:00  Laptop     1842.45   Cancelled
+ORD201035 2023-11-12 00:00:00  Laptop     2024.44   Cancelled
+ORD200275 2023-11-04 00:00:00   Chair      130.14   Cancelled
+ORD200227 2023-11-02 00:00:00 Monitor      730.34   Cancelled
+ORD200159 2023-10-31 00:00:00 Printer      299.35   Cancelled
+ORD200417 2023-10-24 00:00:00  Laptop      277.05   Cancelled
+ORD201021 2023-10-23 00:00:00   Phone      945.81   Cancelled
+ORD201125 2023-10-16 00:00:00    Desk     1633.44   Cancelled
+ORD201161 2023-10-16 00:00:00   Phone       11.39   Cancelled
+ORD200421 2023-10-15 00:00:00   Chair      576.42   Cancelled
+ORD200636 2023-10-05 00:00:00  Laptop     1484.28   Cancelled
+ORD200397 2023-09-28 00:00:00 Monitor      427.06   Cancelled
+ORD200974 2023-09-27 00:00:00    Desk     1333.90   Cancelled
+ORD200224 2023-09-23 00:00:00 Printer      365.84   Cancelled
+ORD200106 2023-09-08 00:00:00    Desk     1395.15   Cancelled
+ORD200204 2023-09-05 00:00:00  Laptop     1654.84   Cancelled
+ORD200489 2023-09-05 00:00:00  Tablet      448.02   Cancelled
+ORD200768 2023-09-04 00:00:00  Tablet     3267.30   Cancelled
+ORD200839 2023-08-24 00:00:00   Chair      593.91   Cancelled
+ORD200553 2023-08-23 00:00:00   Phone      667.66   Cancelled
+ORD200786 2023-08-23 00:00:00   Chair      226.55   Cancelled
+ORD201062 2023-08-23 00:00:00   Chair      427.60   Cancelled
+ORD200083 2023-08-22 00:00:00  Laptop     2161.64   Cancelled
+ORD200964 2023-08-20 00:00:00   Phone     1822.10   Cancelled
+ORD201100 2023-08-17 00:00:00  Laptop      190.55   Cancelled
+ORD201128 2023-08-17 00:00:00 Monitor     1940.37   Cancelled
+ORD201176 2023-08-13 00:00:00  Tablet      427.66   Cancelled
+ORD200192 2023-08-11 00:00:00    Desk      645.46   Cancelled
+ORD200321 2023-08-09 00:00:00   Phone      609.16   Cancelled
+ORD200050 2023-07-31 00:00:00  Tablet      179.22   Cancelled
+ORD200327 2023-07-25 00:00:00   Phone      359.99   Cancelled
+ORD200921 2023-07-24 00:00:00  Tablet      438.93   Cancelled
+ORD200682 2023-07-23 00:00:00 Monitor     1528.26   Cancelled
+ORD200193 2023-07-21 00:00:00 Printer       46.66   Cancelled
+ORD200416 2023-07-18 00:00:00  Laptop     1288.10   Cancelled
+ORD200941 2023-07-17 00:00:00 Printer      558.50   Cancelled
+ORD200938 2023-07-12 00:00:00   Chair      994.38   Cancelled
+ORD200189 2023-07-05 00:00:00 Printer     2147.25   Cancelled
+ORD200599 2023-06-30 00:00:00   Chair     1670.97   Cancelled
+ORD200362 2023-06-27 00:00:00 Monitor      827.36   Cancelled
+ORD200630 2023-06-23 00:00:00 Monitor     1244.20   Cancelled
+ORD200212 2023-06-20 00:00:00 Monitor      265.38   Cancelled
+ORD200623 2023-06-16 00:00:00 Printer     1188.00   Cancelled
+ORD200671 2023-06-15 00:00:00   Chair      253.70   Cancelled
+ORD200033 2023-06-05 00:00:00   Chair      162.77   Cancelled
+ORD200612 2023-06-02 00:00:00   Chair     1335.36   Cancelled
+ORD200878 2023-06-01 00:00:00    Desk      661.38   Cancelled
+ORD200810 2023-05-31 00:00:00  Tablet      553.56   Cancelled
+ORD200600 2023-05-26 00:00:00 Printer       72.31   Cancelled
+ORD200894 2023-05-23 00:00:00  Tablet     1725.03   Cancelled
+ORD200056 2023-05-21 00:00:00  Tablet     1437.63   Cancelled
+ORD200232 2023-05-19 00:00:00 Printer     1777.76   Cancelled
+ORD200998 2023-05-19 00:00:00   Phone      367.34   Cancelled
+ORD200228 2023-05-17 00:00:00   Chair     1543.68   Cancelled
+ORD200301 2023-05-11 00:00:00   Chair      583.99   Cancelled
+ORD200356 2023-05-06 00:00:00 Printer     1872.90   Cancelled
+ORD201111 2023-05-06 00:00:00 Monitor      937.80   Cancelled
+ORD200073 2023-05-03 00:00:00 Monitor     1733.80   Cancelled
+ORD200368 2023-05-01 00:00:00 Monitor      813.06   Cancelled
+ORD200340 2023-04-23 00:00:00  Laptop     2606.25   Cancelled
+ORD200213 2023-04-20 00:00:00  Laptop      634.40   Cancelled
+ORD200120 2023-04-11 00:00:00  Tablet     2517.36   Cancelled
+ORD200718 2023-04-08 00:00:00  Laptop      258.96   Cancelled
+ORD200451 2023-04-01 00:00:00 Monitor      183.18   Cancelled
+ORD201010 2023-03-31 00:00:00 Monitor     1978.71   Cancelled
+ORD200940 2023-03-27 00:00:00 Printer     1221.28   Cancelled
+ORD200758 2023-03-26 00:00:00  Tablet     1874.52   Cancelled
+ORD201108 2023-03-20 00:00:00  Laptop      634.94   Cancelled
+ORD200116 2023-03-19 00:00:00 Printer     1165.40   Cancelled
+ORD201114 2023-03-16 00:00:00  Tablet     1979.64   Cancelled
+ORD200464 2023-03-14 00:00:00  Tablet     1737.68   Cancelled
+ORD200655 2023-03-14 00:00:00   Chair      265.20   Cancelled
+ORD201106 2023-03-12 00:00:00   Chair      372.80   Cancelled
+ORD200102 2023-03-08 00:00:00  Laptop      140.68   Cancelled
+ORD200117 2023-03-08 00:00:00  Tablet      535.50   Cancelled
+ORD200775 2023-03-04 00:00:00   Phone     1250.44   Cancelled
+ORD200818 2023-03-02 00:00:00   Phone     1563.36   Cancelled
+ORD200328 2023-02-28 00:00:00  Tablet     3370.20   Cancelled
+ORD201072 2023-02-26 00:00:00 Monitor      392.61   Cancelled
+ORD201150 2023-02-20 00:00:00    Desk     1210.60   Cancelled
+ORD201028 2023-02-17 00:00:00    Desk     1761.24   Cancelled
+ORD200244 2023-02-16 00:00:00    Desk      635.54   Cancelled
+ORD201144 2023-02-16 00:00:00    Desk     2539.70   Cancelled
+ORD200669 2023-02-05 00:00:00    Desk      257.00   Cancelled
+ORD200274 2023-02-04 00:00:00   Phone      364.80   Cancelled
+ORD200836 2023-02-02 00:00:00   Phone      178.44   Cancelled
+ORD201151 2023-01-29 00:00:00   Chair     1216.08   Cancelled
+ORD200295 2023-01-25 00:00:00 Printer      537.40   Cancelled
+ORD200573 2023-01-25 00:00:00   Chair     2107.10   Cancelled
+ORD200639 2023-01-20 00:00:00   Chair      529.19   Cancelled
+ORD200058 2023-01-15 00:00:00   Phone     1898.76   Cancelled
+ORD200418 2023-01-11 00:00:00 Printer      310.93   Cancelled
+ORD201179 2023-01-08 00:00:00  Laptop     2592.75   Cancelled
+ORD200472 2023-01-06 00:00:00   Chair     1524.36   Cancelled
+ORD200645 2023-01-02 00:00:00  Laptop      300.10   Cancelled
+ORD200112 2023-01-01 00:00:00 Monitor      410.60   Cancelled
+
+==============================================================================
+Q2. Top 10 des commandes les plus cheres
+------------------------------------------------------------------------------
+SELECT OrderID, CustomerID, Product, Quantity, UnitPrice, TotalPrice
+FROM orders
+ORDER BY TotalPrice DESC
+LIMIT 10
+------------------------------------------------------------------------------
+  OrderID CustomerID Product  Quantity  UnitPrice  TotalPrice
+ORD200789     C57276  Tablet         5     691.28     3456.40
+ORD201122     C38840 Monitor         5     678.19     3390.95
+ORD200632     C67260  Laptop         5     678.16     3390.80
+ORD200469     C13877   Chair         5     676.98     3384.90
+ORD200328     C18404  Tablet         5     674.04     3370.20
+ORD200107     C16775 Printer         5     670.75     3353.75
+ORD200326     C65986  Laptop         5     670.48     3352.40
+ORD201065     C47778 Printer         5     666.80     3334.00
+ORD201031     C59183   Phone         5     664.51     3322.55
+ORD200463     C25276  Laptop         5     662.78     3313.90
+
+==============================================================================
+Q3. Commandes payees en Credit Card avec plus de 3 articles dans le panier
+------------------------------------------------------------------------------
+SELECT OrderID, Date, Product, ItemsInCart, PaymentMethod
+FROM orders
+WHERE PaymentMethod = 'Credit Card' AND ItemsInCart > 3
+ORDER BY ItemsInCart DESC
+------------------------------------------------------------------------------
+  OrderID                Date Product  ItemsInCart PaymentMethod
+ORD200177 2023-08-05 00:00:00   Chair           10   Credit Card
+ORD200412 2025-04-11 00:00:00  Tablet           10   Credit Card
+ORD200527 2024-08-19 00:00:00   Chair           10   Credit Card
+ORD200601 2023-10-02 00:00:00 Monitor           10   Credit Card
+ORD200615 2025-03-07 00:00:00 Monitor           10   Credit Card
+ORD200764 2024-03-10 00:00:00  Laptop           10   Credit Card
+ORD200855 2023-05-25 00:00:00 Monitor           10   Credit Card
+ORD200964 2023-08-20 00:00:00   Phone           10   Credit Card
+ORD200010 2023-12-29 00:00:00  Tablet            9   Credit Card
+ORD200103 2025-01-25 00:00:00   Phone            9   Credit Card
+ORD200154 2023-07-20 00:00:00   Phone            9   Credit Card
+ORD200200 2025-06-07 00:00:00  Tablet            9   Credit Card
+ORD200223 2024-09-11 00:00:00   Phone            9   Credit Card
+ORD200259 2023-06-11 00:00:00   Chair            9   Credit Card
+ORD200277 2024-09-09 00:00:00   Chair            9   Credit Card
+ORD200361 2024-06-29 00:00:00 Printer            9   Credit Card
+ORD200429 2024-12-19 00:00:00 Printer            9   Credit Card
+ORD200456 2023-06-26 00:00:00    Desk            9   Credit Card
+ORD200588 2024-12-10 00:00:00 Monitor            9   Credit Card
+ORD200818 2023-03-02 00:00:00   Phone            9   Credit Card
+ORD200941 2023-07-17 00:00:00 Printer            9   Credit Card
+ORD201156 2023-07-19 00:00:00  Laptop            9   Credit Card
+ORD200002 2024-02-27 00:00:00  Tablet            8   Credit Card
+ORD200089 2025-02-25 00:00:00 Printer            8   Credit Card
+ORD200144 2023-08-04 00:00:00    Desk            8   Credit Card
+ORD200179 2024-11-24 00:00:00  Laptop            8   Credit Card
+ORD200228 2023-05-17 00:00:00   Chair            8   Credit Card
+ORD200289 2023-07-26 00:00:00   Chair            8   Credit Card
+ORD200325 2023-06-29 00:00:00    Desk            8   Credit Card
+ORD200378 2024-02-01 00:00:00   Chair            8   Credit Card
+ORD200472 2023-01-06 00:00:00   Chair            8   Credit Card
+ORD200479 2023-02-18 00:00:00 Monitor            8   Credit Card
+ORD200670 2024-04-18 00:00:00    Desk            8   Credit Card
+ORD200684 2024-09-22 00:00:00 Printer            8   Credit Card
+ORD200688 2024-03-06 00:00:00 Monitor            8   Credit Card
+ORD200731 2024-06-07 00:00:00 Printer            8   Credit Card
+ORD200748 2024-07-15 00:00:00  Tablet            8   Credit Card
+ORD200752 2024-10-03 00:00:00   Phone            8   Credit Card
+ORD200758 2023-03-26 00:00:00  Tablet            8   Credit Card
+ORD200778 2023-04-28 00:00:00  Laptop            8   Credit Card
+ORD200816 2024-02-21 00:00:00  Tablet            8   Credit Card
+ORD200823 2024-10-07 00:00:00  Laptop            8   Credit Card
+ORD200889 2024-10-27 00:00:00 Monitor            8   Credit Card
+ORD200913 2023-02-16 00:00:00 Printer            8   Credit Card
+ORD201022 2025-02-24 00:00:00  Tablet            8   Credit Card
+ORD201077 2025-03-07 00:00:00 Printer            8   Credit Card
+ORD201150 2023-02-20 00:00:00    Desk            8   Credit Card
+ORD201172 2025-02-04 00:00:00    Desk            8   Credit Card
+ORD200093 2023-01-14 00:00:00    Desk            7   Credit Card
+ORD200171 2023-08-15 00:00:00  Tablet            7   Credit Card
+ORD200269 2023-11-25 00:00:00  Tablet            7   Credit Card
+ORD200297 2023-02-22 00:00:00    Desk            7   Credit Card
+ORD200383 2023-01-20 00:00:00   Chair            7   Credit Card
+ORD200458 2024-07-02 00:00:00 Monitor            7   Credit Card
+ORD200501 2024-02-04 00:00:00    Desk            7   Credit Card
+ORD200594 2024-02-21 00:00:00   Phone            7   Credit Card
+ORD200616 2024-10-17 00:00:00  Tablet            7   Credit Card
+ORD200621 2023-10-22 00:00:00   Phone            7   Credit Card
+ORD200622 2024-11-02 00:00:00    Desk            7   Credit Card
+ORD200642 2024-04-29 00:00:00   Chair            7   Credit Card
+ORD200673 2023-02-21 00:00:00  Tablet            7   Credit Card
+ORD200750 2023-01-14 00:00:00  Tablet            7   Credit Card
+ORD200767 2025-04-18 00:00:00  Tablet            7   Credit Card
+ORD200817 2023-10-05 00:00:00   Chair            7   Credit Card
+ORD200840 2024-01-14 00:00:00   Chair            7   Credit Card
+ORD200854 2025-06-13 00:00:00  Laptop            7   Credit Card
+ORD200885 2024-04-07 00:00:00  Laptop            7   Credit Card
+ORD200903 2023-05-17 00:00:00 Monitor            7   Credit Card
+ORD200917 2025-01-20 00:00:00  Laptop            7   Credit Card
+ORD200923 2023-02-11 00:00:00 Printer            7   Credit Card
+ORD200966 2025-05-20 00:00:00 Monitor            7   Credit Card
+ORD200986 2024-09-07 00:00:00  Laptop            7   Credit Card
+ORD201098 2023-06-17 00:00:00 Monitor            7   Credit Card
+ORD201116 2023-10-14 00:00:00 Printer            7   Credit Card
+ORD201152 2023-11-09 00:00:00  Tablet            7   Credit Card
+ORD201163 2024-06-11 00:00:00  Laptop            7   Credit Card
+ORD201171 2023-08-28 00:00:00   Phone            7   Credit Card
+ORD200009 2023-11-21 00:00:00    Desk            6   Credit Card
+ORD200029 2024-09-20 00:00:00    Desk            6   Credit Card
+ORD200065 2023-12-30 00:00:00 Monitor            6   Credit Card
+ORD200083 2023-08-22 00:00:00  Laptop            6   Credit Card
+ORD200116 2023-03-19 00:00:00 Printer            6   Credit Card
+ORD200132 2023-03-28 00:00:00  Tablet            6   Credit Card
+ORD200145 2024-03-02 00:00:00 Printer            6   Credit Card
+ORD200212 2023-06-20 00:00:00 Monitor            6   Credit Card
+ORD200220 2023-07-18 00:00:00  Laptop            6   Credit Card
+ORD200238 2024-12-13 00:00:00    Desk            6   Credit Card
+ORD200266 2024-06-08 00:00:00   Chair            6   Credit Card
+ORD200284 2023-02-16 00:00:00  Laptop            6   Credit Card
+ORD200291 2024-05-12 00:00:00   Phone            6   Credit Card
+ORD200329 2024-12-25 00:00:00   Chair            6   Credit Card
+ORD200363 2024-05-24 00:00:00  Laptop            6   Credit Card
+ORD200368 2023-05-01 00:00:00 Monitor            6   Credit Card
+ORD200432 2023-09-04 00:00:00  Tablet            6   Credit Card
+ORD200434 2023-10-22 00:00:00 Printer            6   Credit Card
+ORD200474 2023-11-15 00:00:00 Printer            6   Credit Card
+ORD200523 2025-02-18 00:00:00    Desk            6   Credit Card
+ORD200546 2024-03-01 00:00:00 Monitor            6   Credit Card
+ORD200574 2024-01-24 00:00:00   Chair            6   Credit Card
+ORD200578 2024-10-10 00:00:00 Monitor            6   Credit Card
+ORD200653 2024-02-25 00:00:00 Printer            6   Credit Card
+ORD200734 2024-01-23 00:00:00 Printer            6   Credit Card
+ORD200736 2024-02-09 00:00:00 Monitor            6   Credit Card
+ORD200812 2024-01-26 00:00:00   Phone            6   Credit Card
+ORD200875 2023-08-03 00:00:00  Laptop            6   Credit Card
+ORD200881 2023-01-03 00:00:00  Tablet            6   Credit Card
+ORD200920 2025-03-12 00:00:00  Tablet            6   Credit Card
+ORD200938 2023-07-12 00:00:00   Chair            6   Credit Card
+ORD200959 2024-04-13 00:00:00  Tablet            6   Credit Card
+ORD200968 2024-02-08 00:00:00 Monitor            6   Credit Card
+ORD200976 2024-04-04 00:00:00  Tablet            6   Credit Card
+ORD201005 2023-03-02 00:00:00 Printer            6   Credit Card
+ORD201010 2023-03-31 00:00:00 Monitor            6   Credit Card
+ORD201030 2023-10-02 00:00:00   Phone            6   Credit Card
+ORD201049 2024-07-18 00:00:00    Desk            6   Credit Card
+ORD201094 2023-06-28 00:00:00 Printer            6   Credit Card
+ORD201127 2025-03-15 00:00:00 Printer            6   Credit Card
+ORD201149 2024-07-25 00:00:00   Chair            6   Credit Card
+ORD201155 2023-08-13 00:00:00 Printer            6   Credit Card
+ORD201168 2023-04-08 00:00:00  Laptop            6   Credit Card
+ORD201179 2023-01-08 00:00:00  Laptop            6   Credit Card
+ORD201190 2025-06-08 00:00:00    Desk            6   Credit Card
+ORD201195 2024-06-20 00:00:00    Desk            6   Credit Card
+ORD200034 2023-01-07 00:00:00   Chair            5   Credit Card
+ORD200068 2023-12-11 00:00:00   Chair            5   Credit Card
+ORD200077 2024-05-24 00:00:00   Phone            5   Credit Card
+ORD200125 2024-11-06 00:00:00   Phone            5   Credit Card
+ORD200137 2024-11-26 00:00:00 Monitor            5   Credit Card
+ORD200158 2024-05-16 00:00:00  Tablet            5   Credit Card
+ORD200159 2023-10-31 00:00:00 Printer            5   Credit Card
+ORD200237 2024-03-14 00:00:00 Monitor            5   Credit Card
+ORD200257 2024-04-23 00:00:00   Phone            5   Credit Card
+ORD200262 2023-01-10 00:00:00   Phone            5   Credit Card
+ORD200292 2025-01-15 00:00:00 Monitor            5   Credit Card
+ORD200333 2024-04-16 00:00:00   Phone            5   Credit Card
+ORD200347 2024-02-03 00:00:00 Printer            5   Credit Card
+ORD200461 2024-06-08 00:00:00  Tablet            5   Credit Card
+ORD200468 2025-06-21 00:00:00   Phone            5   Credit Card
+ORD200507 2023-07-05 00:00:00   Phone            5   Credit Card
+ORD200544 2024-03-10 00:00:00 Printer            5   Credit Card
+ORD200564 2025-04-08 00:00:00    Desk            5   Credit Card
+ORD200598 2024-04-26 00:00:00    Desk            5   Credit Card
+ORD200682 2023-07-23 00:00:00 Monitor            5   Credit Card
+ORD200692 2023-01-23 00:00:00    Desk            5   Credit Card
+ORD200701 2024-06-23 00:00:00 Monitor            5   Credit Card
+ORD200738 2025-06-04 00:00:00   Phone            5   Credit Card
+ORD200810 2023-05-31 00:00:00  Tablet            5   Credit Card
+ORD200821 2024-12-14 00:00:00  Laptop            5   Credit Card
+ORD200833 2025-03-14 00:00:00   Phone            5   Credit Card
+ORD200841 2024-09-19 00:00:00 Printer            5   Credit Card
+ORD200859 2024-08-28 00:00:00   Chair            5   Credit Card
+ORD200862 2023-12-02 00:00:00    Desk            5   Credit Card
+ORD200863 2024-05-20 00:00:00   Phone            5   Credit Card
+ORD200967 2025-05-06 00:00:00  Tablet            5   Credit Card
+ORD201063 2024-06-19 00:00:00    Desk            5   Credit Card
+ORD201081 2023-04-21 00:00:00 Monitor            5   Credit Card
+ORD201130 2025-02-16 00:00:00  Laptop            5   Credit Card
+ORD201167 2023-10-17 00:00:00 Printer            5   Credit Card
+ORD201174 2023-11-27 00:00:00 Printer            5   Credit Card
+ORD200005 2023-10-23 00:00:00   Phone            4   Credit Card
+ORD200013 2023-08-30 00:00:00  Laptop            4   Credit Card
+ORD200039 2025-02-27 00:00:00 Printer            4   Credit Card
+ORD200071 2025-06-10 00:00:00 Monitor            4   Credit Card
+ORD200146 2025-04-30 00:00:00  Tablet            4   Credit Card
+ORD200263 2023-03-25 00:00:00   Phone            4   Credit Card
+ORD200275 2023-11-04 00:00:00   Chair            4   Credit Card
+ORD200355 2025-06-03 00:00:00  Tablet            4   Credit Card
+ORD200365 2025-02-14 00:00:00   Phone            4   Credit Card
+ORD200384 2024-11-24 00:00:00   Chair            4   Credit Card
+ORD200493 2025-01-28 00:00:00   Phone            4   Credit Card
+ORD200499 2023-04-06 00:00:00 Printer            4   Credit Card
+ORD200524 2023-10-25 00:00:00   Phone            4   Credit Card
+ORD200580 2023-11-14 00:00:00 Monitor            4   Credit Card
+ORD200645 2023-01-02 00:00:00  Laptop            4   Credit Card
+ORD200666 2024-08-31 00:00:00 Monitor            4   Credit Card
+ORD200676 2025-06-23 00:00:00  Laptop            4   Credit Card
+ORD200716 2024-06-13 00:00:00   Chair            4   Credit Card
+ORD200724 2024-10-18 00:00:00 Printer            4   Credit Card
+ORD200755 2023-06-13 00:00:00    Desk            4   Credit Card
+ORD200864 2023-05-03 00:00:00    Desk            4   Credit Card
+ORD200931 2024-01-01 00:00:00 Printer            4   Credit Card
+ORD200950 2024-05-31 00:00:00  Laptop            4   Credit Card
+ORD200989 2023-03-23 00:00:00  Laptop            4   Credit Card
+ORD201021 2023-10-23 00:00:00   Phone            4   Credit Card
+ORD201029 2025-03-01 00:00:00    Desk            4   Credit Card
+ORD201044 2025-06-22 00:00:00 Printer            4   Credit Card
+ORD201118 2024-05-24 00:00:00   Phone            4   Credit Card
+ORD201132 2024-12-02 00:00:00   Chair            4   Credit Card
+ORD201178 2024-09-08 00:00:00 Monitor            4   Credit Card
+
+==============================================================================
+Q4. Chiffre d'affaires, nombre de commandes et panier moyen par produit
+------------------------------------------------------------------------------
+SELECT
+    Product,
+    COUNT(*) AS nb_orders,
+    SUM(TotalPrice) AS total_revenue,
+    ROUND(AVG(TotalPrice), 2) AS avg_order_value
+FROM orders
+GROUP BY Product
+ORDER BY total_revenue DESC
+------------------------------------------------------------------------------
+Product  nb_orders  total_revenue  avg_order_value
+  Chair        178      195620.11          1098.99
+Printer        181      195612.61          1080.73
+ Laptop        173      192126.56          1110.56
+ Tablet        179      186568.95          1042.28
+Monitor        163      175651.41          1077.62
+   Desk        170      167459.93           985.06
+  Phone        156      151722.39           972.58
+
+==============================================================================
+Q5. Nombre de commandes et CA par mode de paiement
+------------------------------------------------------------------------------
+SELECT
+    PaymentMethod,
+    COUNT(*) AS nb_orders,
+    SUM(TotalPrice) AS total_revenue
+FROM orders
+GROUP BY PaymentMethod
+ORDER BY nb_orders DESC
+------------------------------------------------------------------------------
+PaymentMethod  nb_orders  total_revenue
+       Online        258      262442.94
+         Cash        246      259786.29
+  Credit Card        234      263847.63
+   Debit Card        232      232361.18
+    Gift Card        230      246323.92
+
+==============================================================================
+Q6. Repartition des commandes par statut
+------------------------------------------------------------------------------
+SELECT
+    OrderStatus,
+    COUNT(*) AS nb_orders,
+    ROUND(100.0 * COUNT(*) / (SELECT COUNT(*) FROM orders), 2) AS pct_of_orders
+FROM orders
+GROUP BY OrderStatus
+ORDER BY nb_orders DESC
+------------------------------------------------------------------------------
+OrderStatus  nb_orders  pct_of_orders
+  Cancelled        250          20.83
+   Returned        247          20.58
+    Pending        237          19.75
+    Shipped        235          19.58
+  Delivered        231          19.25
+
+==============================================================================
+Q7. Panier moyen (ItemsInCart) et CA moyen par source de trafic
+------------------------------------------------------------------------------
+SELECT
+    ReferralSource,
+    COUNT(*) AS nb_orders,
+    ROUND(AVG(ItemsInCart), 2) AS avg_items_in_cart,
+    ROUND(AVG(TotalPrice), 2) AS avg_order_value
+FROM orders
+GROUP BY ReferralSource
+ORDER BY avg_order_value DESC
+------------------------------------------------------------------------------
+ReferralSource  nb_orders  avg_items_in_cart  avg_order_value
+      Facebook        228               5.33          1098.29
+     Instagram        259               5.50          1062.88
+         Email        250               5.60          1047.23
+        Google        241               5.57          1039.18
+      Referral        222               5.40          1021.69
+
+==============================================================================
+Q8. Produits dont le CA total depasse 100 000
+------------------------------------------------------------------------------
+SELECT
+    Product,
+    COUNT(*) AS nb_orders,
+    SUM(TotalPrice) AS total_revenue
+FROM orders
+GROUP BY Product
+HAVING SUM(TotalPrice) > 100000
+ORDER BY total_revenue DESC
+------------------------------------------------------------------------------
+Product  nb_orders  total_revenue
+  Chair        178      195620.11
+Printer        181      195612.61
+ Laptop        173      192126.56
+ Tablet        179      186568.95
+Monitor        163      175651.41
+   Desk        170      167459.93
+  Phone        156      151722.39
+
+==============================================================================
+Q9. Modes de paiement utilises dans plus de 200 commandes
+------------------------------------------------------------------------------
+SELECT
+    PaymentMethod,
+    COUNT(*) AS nb_orders
+FROM orders
+GROUP BY PaymentMethod
+HAVING COUNT(*) > 200
+ORDER BY nb_orders DESC
+------------------------------------------------------------------------------
+PaymentMethod  nb_orders
+       Online        258
+         Cash        246
+  Credit Card        234
+   Debit Card        232
+    Gift Card        230
+
+==============================================================================
+Q10. [FAUX] Alias utilise dans WHERE -> erreur attendue
+------------------------------------------------------------------------------
+SELECT PaymentMethod, SUM(TotalPrice) AS total_revenue
+FROM orders
+WHERE total_revenue > 100000
+GROUP BY PaymentMethod
+------------------------------------------------------------------------------
+[ERREUR SQL - attendue pour la demo de l'Alias Trap] Execution failed on sql 'SELECT PaymentMethod, SUM(TotalPrice) AS total_revenue
+FROM orders
+WHERE total_revenue > 100000
+GROUP BY PaymentMethod': misuse of aggregate: SUM()
+
+==============================================================================
+Q11. [CORRECT] Meme filtre ecrit avec HAVING
+------------------------------------------------------------------------------
+SELECT PaymentMethod, SUM(TotalPrice) AS total_revenue
+FROM orders
+GROUP BY PaymentMethod
+HAVING total_revenue > 100000
+------------------------------------------------------------------------------
+PaymentMethod  total_revenue
+         Cash      259786.29
+  Credit Card      263847.63
+   Debit Card      232361.18
+    Gift Card      246323.92
+       Online      262442.94
+
+==============================================================================
+Q12. Part en % de chaque produit dans le CA total
+------------------------------------------------------------------------------
+SELECT
+    Product,
+    SUM(TotalPrice) AS product_revenue,
+    ROUND(100.0 * SUM(TotalPrice) / (SELECT SUM(TotalPrice) FROM orders), 2) AS pct_of_total_revenue
+FROM orders
+GROUP BY Product
+ORDER BY pct_of_total_revenue DESC
+------------------------------------------------------------------------------
+Product  product_revenue  pct_of_total_revenue
+Printer        195612.61                 15.47
+  Chair        195620.11                 15.47
+ Laptop        192126.56                 15.19
+ Tablet        186568.95                 14.75
+Monitor        175651.41                 13.89
+   Desk        167459.93                 13.24
+  Phone        151722.39                 12.00
+
+==============================================================================
+Q13. CA total et nombre de commandes par annee
+------------------------------------------------------------------------------
+SELECT
+    strftime('%Y', Date) AS year,
+    COUNT(*) AS nb_orders,
+    SUM(TotalPrice) AS total_revenue
+FROM orders
+GROUP BY year
+ORDER BY year
+------------------------------------------------------------------------------
+year  nb_orders  total_revenue
+2023        510      552643.24
+2024        459      480235.87
+2025        231      231882.85
