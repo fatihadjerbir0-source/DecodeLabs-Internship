@@ -1,5 +1,5 @@
  Dataset chargé : 1200 lignes, 14 colonnes
-    Colonnes : ['OrderID', 'Date', 'CustomerID', 'Product', 'Quantity', 'UnitPrice', 'ShippingAddress', 'PaymentMethod', 'OrderStatus', 'TrackingNumber', 'ItemsInCart', 'CouponCode', 'ReferralSource', 'TotalPrice']
+ Colonnes : ['OrderID', 'Date', 'CustomerID', 'Product', 'Quantity', 'UnitPrice', 'ShippingAddress', 'PaymentMethod', 'OrderStatus', 'TrackingNumber', 'ItemsInCart', 'CouponCode', 'ReferralSource', 'TotalPrice']
 
  Valeurs manquantes par colonne :
     - CouponCode : 309 valeurs manquantes (25.8%)
